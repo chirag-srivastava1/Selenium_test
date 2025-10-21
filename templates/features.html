@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Features - Professional Testing Demo{% endblock %}
+{% block content %}
+
+<div class="welcome-box">
+    <h2><i class="fas fa-star"></i> Professional Testing Platform Features</h2>
+    <p>Discover the comprehensive capabilities of our advanced Selenium WebDriver testing environment.</p>
+</div>
+
+<div class="grid grid-2">
+    <div class="card">
+        <h3><i class="fas fa-shield-alt" style="color: var(--error-color);"></i> Advanced Security</h3>
+        <ul>
+            <li>Multi-role authentication system</li>
+            <li>Session-based access control</li>
+            <li>Input sanitization & validation</li>
+            <li>CSRF protection</li>
+            <li>SQL injection prevention</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h3><i class="fas fa-mobile-alt" style="color: var(--success-color);"></i> Responsive Design</h3>
+        <ul>
+            <li>Mobile-first approach</li>
+            <li>Cross-device compatibility</li>
+            <li>Adaptive layouts</li>
+            <li>Touch-friendly interface</li>
+            <li>Performance optimized</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card">
+    <h3><i class="fas fa-cogs"></i> Testing Capabilities</h3>
+    <div class="grid grid-3">
+        <div>
+            <h4>Functional Testing</h4>
+            <ul>
+                <li>User authentication flows</li>
+                <li>Form validation testing</li>
+                <li>Navigation verification</li>
+                <li>Data processing validation</li>
+            </ul>
+        </div>
+        <div>
+            <h4>UI/UX Testing</h4>
+            <ul>
+                <li>Element presence verification</li>
+                <li>Visual layout testing</li>
+                <li>Interaction responsiveness</li>
+                <li>Cross-browser compatibility</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Security Testing</h4>
+            <ul>
+                <li>Access control verification</li>
+                <li>Session management testing</li>
+                <li>Input validation checks</li>
+                <li>Authentication bypass prevention</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Contact - Selenium Testing Demo{% endblock %}
+{% block content %}
+<div class="welcome-box">
+    <h2>📧 Contact Form</h2>
+    <p>Use this form to test various input validation and form handling scenarios.</p>
+</div>
+
+<form method="POST" style="max-width: 600px; margin: 0 auto;">
+    <div class="form-group">
+        <label for="name">👤 Full Name: <span style="color: #dc3545;">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">📧 Email Address: <span style="color: #dc3545;">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">💬 Message: <span style="color: #dc3545;">*</span></label>
+        <textarea id="message" name="message" rows="6" placeholder="Enter your message here..." required></textarea>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-success" style="width: 100%;">🚀 Send Message</button>
+    </div>
+    
+    <p style="text-align: center; color: #6c757d; margin-top: 10px;">
+        <small><span style="color: #dc3545;">*</span> Required fields</small>
+    </p>
+</form>
+
+<div style="background-color: #fff3cd; padding: 15px; border-radius: 6px; margin: 20px 0;">
+    <h4>🧪 Test Scenarios:</h4>
+    <ul>
+        <li><strong>Valid Form:</strong> Fill all fields with proper data</li>
+        <li><strong>Invalid Email:</strong> Try "invalid-email" format</li>
+        <li><strong>Empty Fields:</strong> Submit with missing required data</li>
+        <li><strong>Long Content:</strong> Test with very long messages</li>
+    </ul>
+</div>
+
+<p style="text-align: center; margin-top: 20px;">
+    <a href="{{ url_for('index') }}" class="btn">← Back to Home</a>
+    {% if session.username %}
+        <a href="{{ url_for('dashboard') }}" class="btn">📊 Dashboard</a>
+    {% endif %}
+</p>
+{% endblock %}

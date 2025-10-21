@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}About - Selenium Testing Demo{% endblock %}
+{% block content %}
+<div class="welcome-box">
+    <h2>ℹ️ About This Demo Application</h2>
+    <p>Educational web application designed specifically for Selenium WebDriver testing and automation learning.</p>
+</div>
+
+<h3>🎯 Project Purpose</h3>
+<p>This web application provides a comprehensive testing environment for learning Selenium WebDriver automation. It includes realistic scenarios that mirror real-world web applications while being simple enough for educational purposes.</p>
+
+<h3>⚙️ Technology Stack</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr style="background-color: #f8f9fa;">
+        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Backend</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Python Flask</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Testing</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Selenium WebDriver</td>
+    </tr>
+    <tr style="background-color: #f8f9fa;">
+        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Framework</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Pytest</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Frontend</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">HTML5, CSS3, Jinja2</td>
+    </tr>
+</table>
+
+<h3>🧪 Testing Features</h3>
+<ul style="line-height: 1.8;">
+    <li>🔐 <strong>Authentication Testing:</strong> Login/logout, session management, access control</li>
+    <li>📝 <strong>Form Testing:</strong> Validation, error handling, data submission</li>
+    <li>🧭 <strong>Navigation Testing:</strong> Multi-page flows, routing, UI interactions</li>
+    <li>🔒 <strong>Security Testing:</strong> Authorization, input validation, XSS prevention</li>
+</ul>
+
+<h3>📚 Learning Objectives</h3>
+<div style="background-color: #e8f5e8; padding: 15px; border-radius: 6px; margin: 20px 0;">
+    <ul>
+        <li>🎓 Master Selenium WebDriver with Python</li>
+        <li>🔧 Learn test automation best practices</li>
+        <li>📊 Understand test case design and execution</li>
+        <li>🎭 Practice both positive and negative testing</li>
+        <li>📈 Generate professional test reports</li>
+    </ul>
+</div>
+
+<p style="text-align: center; margin-top: 30px;">
+    <a href="{{ url_for('index') }}" class="btn">🏠 Back to Home</a>
+    <a href="{{ url_for('login') }}" class="btn btn-success">🎯 Start Testing</a>
+</p>
+{% endblock %}

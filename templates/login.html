@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block title %}Login - Professional Testing Demo{% endblock %}
+{% block content %}
+
+<div class="welcome-box">
+    <h2><i class="fas fa-sign-in-alt"></i> Secure User Authentication</h2>
+    <p>Access your personalized dashboard with role-based permissions and advanced security features.</p>
+</div>
+
+<div style="max-width: 500px; margin: 0 auto;">
+    <form method="POST" action="{{ url_for('login') }}" class="card">
+        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">
+            <i class="fas fa-user-lock"></i> Sign In to Your Account
+        </h3>
+        
+        <div class="form-group">
+            <label for="username">
+                <i class="fas fa-user"></i> Username
+            </label>
+            <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                placeholder="Enter your username" 
+                required 
+                autocomplete="username"
+                style="padding-left: 3rem; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"%23667eea\"><path d=\"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\"/></svg>'); background-repeat: no-repeat; background-position: 10px center; background-size: 20px;">
+        </div>
+        
+        <div class="form-group">
+            <label for="password">
+                <i class="fas fa-lock"></i> Password
+            </label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="Enter your password" 
+                required 
+                autocomplete="current-password"
+                style="padding-left: 3rem;">
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;">
+                <i class="fas fa-sign-in-alt"></i> Sign In Securely
+            </button>
+        </div>
+        
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <p style="color: var(--text-secondary);">
+                <i class="fas fa-shield-alt"></i> Secure authentication with session management
+            </p>
+        </div>
+    </form>
+</div>
+
+<div class="card">
+    <h3><i class="fas fa-users-cog"></i> Available Test Accounts</h3>
+    <p>Choose from our professionally configured test accounts to explore different user experiences:</p>
+    
+    <div class="grid grid-2">
+        <div style="background: linear-gradient(135deg, #fef2f2, #fecaca); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #dc2626;">
+            <h4><i class="fas fa-crown" style="color: #dc2626;"></i> Administrator Access</h4>
+            <p><strong>Username:</strong> <code>admin</code></p>
+            <p><strong>Password:</strong> <code>password123</code></p>
+            <p><small>Full system access with administrative privileges</small></p>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #ecfdf5, #d1fae5); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #059669;">
+            <h4><i class="fas fa-graduation-cap" style="color: #059669;"></i> Student Account</h4>
+            <p><strong>Username:</strong> <code>student</code></p>
+            <p><strong>Password:</strong> <code>student123</code></p>
+            <p><small>Standard user access for educational testing</small></p>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #0891b2;">
+            <h4><i class="fas fa-vial" style="color: #0891b2;"></i> Demo Testing Account</h4>
+            <p><strong>Username:</strong> <code>test_user</code></p>
+            <p><strong>Password:</strong> <code>test123</code></p>
+            <p><small>Demonstration account for testing workflows</small></p>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #fefbeb, #fef3c7); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #d97706;">
+            <h4><i class="fas fa-bug" style="color: #d97706;"></i> QA Tester Access</h4>
+            <p><strong>Username:</strong> <code>qa_tester</code></p>
+            <p><strong>Password:</strong> <code>qa123</code></p>
+            <p><small>Quality assurance testing with specialized access</small></p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h3><i class="fas fa-clipboard-list"></i> Selenium Testing Scenarios</h3>
+    <p>This login page is designed to support comprehensive automated testing scenarios:</p>
+    
+    <div class="grid grid-3">
+        <div>
+            <h4 style="color: var(--success-color);"><i class="fas fa-check-circle"></i> Valid Login Tests</h4>
+            <ul>
+                <li>Successful authentication with correct credentials</li>
+                <li>Role-based dashboard redirection</li>
+                <li>Session establishment verification</li>
+                <li>User preference loading</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h4 style="color: var(--error-color);"><i class="fas fa-times-circle"></i> Invalid Login Tests</h4>
+            <ul>
+                <li>Wrong username or password rejection</li>
+                <li>Empty field validation</li>
+                <li>Error message display verification</li>
+                <li>Multiple failed attempt handling</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h4 style="color: var(--info-color);"><i class="fas fa-shield-alt"></i> Security Tests</h4>
+            <ul>
+                <li>SQL injection prevention</li>
+                <li>XSS attack protection</li>
+                <li>Session hijacking prevention</li>
+                <li>CSRF token validation</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="{{ url_for('index') }}" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+    <a href="{{ url_for('about') }}" class="btn btn-primary">
+        <i class="fas fa-info-circle"></i> Learn More
+    </a>
+</div>
+
+{% endblock %}

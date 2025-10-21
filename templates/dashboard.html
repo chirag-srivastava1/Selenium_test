@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - {{ session.user_name }}{% endblock %}
+{% block content %}
+
+<div class="welcome-box">
+    <h2><i class="fas fa-tachometer-alt"></i> Welcome Back, {{ session.user_name }}!</h2>
+    <p>You have successfully authenticated and accessed your personalized dashboard with {{ session.user_role }} privileges.</p>
+</div>
+
+<div class="grid grid-3">
+    <div class="card">
+        <h3><i class="fas fa-user-circle" style="color: var(--primary-color);"></i> User Profile</h3>
+        <table style="width: 100%;">
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Username:</td>
+                <td style="padding: 8px;"><code>{{ username }}</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Full Name:</td>
+                <td style="padding: 8px;">{{ user_data.name }}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Role:</td>
+                <td style="padding: 8px;">
+                    <span style="background: var(--primary-color); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">
+                        {{ user_data.role }}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Email:</td>
+                <td style="padding: 8px;">{{ user_data.email }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3><i class="fas fa-clock" style="color: var(--success-color);"></i> Session Information</h3>
+        <table style="width: 100%;">
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Login Status:</td>
+                <td style="padding: 8px;">
+                    <span style="color: var(--success-color); font-weight: bold;">
+                        <i class="fas fa-check-circle"></i> Active Session
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Login Time:</td>
+                <td style="padding: 8px;">{{ dashboard_data.login_time }}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Last Login:</td>
+                <td style="padding: 8px;">{{ dashboard_data.last_login }}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Duration:</td>
+                <td style="padding: 8px;">{{ dashboard_data.session_duration }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3><i class="fas fa-chart-bar" style="color: var(--warning-color);"></i> System Analytics</h3>
+        <table style="width: 100%;">
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Access Level:</td>
+                <td style="padding: 8px;">{{ dashboard_data.user_role }}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Total Users:</td>
+                <td style="padding: 8px;">{{ dashboard_data.total_users }}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Platform:</td>
+                <td style="padding: 8px;">Professional Testing Suite</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Version:</td>
+                <td style="padding: 8px;">2.0.0 Professional</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="card">
+    <h3><i class="fas fa-tasks"></i> Dashboard Features & Capabilities</h3>
+    <div class="grid grid-2">
+        <div>
+            <h4><i class="fas fa-check-double" style="color: var(--success-color);"></i> Authentication Verification</h4>
+            <div style="background: #ecfdf5; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--success-color); margin: 1rem 0;">
+                <p><strong>✅ User Authentication:</strong> Successfully validated and session established</p>
+                <p><strong>✅ Role-Based Access:</strong> {{ user_data.role }} permissions granted</p>
+                <p><strong>✅ Session Security:</strong> Secure session management active</p>
+                <p><strong>✅ Data Protection:</strong> User data encrypted and protected</p>
+            </div>
+        </div>
+        
+        <div>
+            <h4><i class="fas fa-cogs" style="color: var(--info-color);"></i> System Functionality</h4>
+            <div style="background: #eff6ff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--info-color); margin: 1rem 0;">
+                <p><strong>🔒 Protected Routes:</strong> Dashboard accessible only after authentication</p>
+                <p><strong>📊 Real-time Data:</strong> Dynamic content based on user context</p>
+                <p><strong>🔄 State Management:</strong> Persistent session across navigation</p>
+                <p><strong>📱 Responsive Design:</strong> Optimized for all device types</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h3><i class="fas fa-rocket"></i> Quick Actions & Navigation</h3>
+    <div style="text-align: center;">
+        <a href="{{ url_for('profile') }}" class="btn btn-primary" style="margin: 0.5rem;">
+            <i class="fas fa-user-edit"></i> Edit Profile
+        </a>
+        <a href="{{ url_for('contact') }}" class="btn btn-success" style="margin: 0.5rem;">
+            <i class="fas fa-envelope"></i> Contact Support
+        </a>
+        <a href="{{ url_for('features') }}" class="btn btn-primary" style="margin: 0.5rem;">
+            <i class="fas fa-star"></i> Platform Features
+        </a>
+        <a href="{{ url_for('about') }}" class="btn btn-primary" style="margin: 0.5rem;">
+            <i class="fas fa-info-circle"></i> About Platform
+        </a>
+        <a href="{{ url_for('api_health') }}" class="btn btn-primary" style="margin: 0.5rem;" target="_blank">
+            <i class="fas fa-heartbeat"></i> API Status
+        </a>
+    </div>
+</div>
+
+<div class="grid grid-2">
+    <div class="card">
+        <h3><i class="fas fa-vial"></i> Testing Validation Points</h3>
+        <div style="space-y: 1rem;">
+            <div style="background: #ecfdf5; padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 1rem;">
+                <strong><i class="fas fa-check-circle" style="color: #10b981;"></i> Authentication Success</strong><br>
+                <small>User successfully logged in and session established with proper role assignment</small>
+            </div>
+            <div style="background: #eff6ff; padding: 1rem; border-radius: 8px; border-left: 4px solid #3b82f6; margin-bottom: 1rem;">
+                <strong><i class="fas fa-shield-alt" style="color: #3b82f6;"></i> Protected Route Access</strong><br>
+                <small>Dashboard accessible only after authentication - unauthorized access prevented</small>
+            </div>
+            <div style="background: #fefbeb; padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 1rem;">
+                <strong><i class="fas fa-user-cog" style="color: #f59e0b;"></i> User Context</strong><br>
+                <small>Personalized content based on logged-in user with role-specific features</small>
+            </div>
+            <div style="background: #fef2f2; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                <strong><i class="fas fa-lock" style="color: #ef4444;"></i> Session Security</strong><br>
+                <small>Proper session management with secure logout functionality available</small>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h3><i class="fas fa-clipboard-check"></i> Selenium Test Scenarios</h3>
+        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Dashboard Testing Checklist</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Direct access test (without login)</li>
+                <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Session validation and user information display</li>
+                <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Navigation links and button functionality</li>
+                <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Logout flow and session termination</li>
+                <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> UI element presence and visibility</li>
+                <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Role-based content verification</li>
+                <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Responsive design functionality</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="card" style="background: linear-gradient(135deg, #10b981, #059669); color: white; text-align: center;">
+    <h3><i class="fas fa-trophy"></i> Congratulations!</h3>
+    <p>You have successfully demonstrated advanced web application testing capabilities:</p>
+    <div class="grid grid-2" style="margin-top: 1.5rem; text-align: left;">
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin: 0.5rem 0;"><i class="fas fa-medal" style="color: #fbbf24;"></i> User authentication and authorization</li>
+            <li style="margin: 0.5rem 0;"><i class="fas fa-medal" style="color: #fbbf24;"></i> Protected route access control</li>
+            <li style="margin: 0.5rem 0;"><i class="fas fa-medal" style="color: #fbbf24;"></i> Session-based state management</li>
+        </ul>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin: 0.5rem 0;"><i class="fas fa-medal" style="color: #fbbf24;"></i> Dynamic content rendering</li>
+            <li style="margin: 0.5rem 0;"><i class="fas fa-medal" style="color: #fbbf24;"></i> Professional user interface design</li>
+            <li style="margin: 0.5rem 0;"><i class="fas fa-medal" style="color: #fbbf24;"></i> Comprehensive security implementation</li>
+        </ul>
+    </div>
+    <div style="margin-top: 2rem;">
+        <a href="{{ url_for('logout') }}" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 1.1rem;">
+            <i class="fas fa-sign-out-alt"></i> Secure Logout
+        </a>
+    </div>
+</div>
+
+{% endblock %}

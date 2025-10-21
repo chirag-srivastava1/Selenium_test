@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block title %}Home - Professional Selenium Testing Demo{% endblock %}
+{% block content %}
+
+<div class="welcome-box">
+    <h2><i class="fas fa-rocket"></i> Welcome to the Professional Testing Platform!</h2>
+    <p>Experience comprehensive web application testing with our advanced Selenium WebDriver demonstration environment.</p>
+</div>
+
+<div class="grid grid-2">
+    <div class="card">
+        <h3><i class="fas fa-shield-alt"></i> Advanced Authentication System</h3>
+        <ul>
+            <li><i class="fas fa-check"></i> <strong>Multi-Role Access Control:</strong> Administrator, Student, QA Tester roles</li>
+            <li><i class="fas fa-check"></i> <strong>Session Management:</strong> Secure login/logout with session tracking</li>
+            <li><i class="fas fa-check"></i> <strong>Security Features:</strong> Input validation and CSRF protection</li>
+            <li><i class="fas fa-check"></i> <strong>User Analytics:</strong> Login tracking and user activity monitoring</li>
+        </ul>
+        <div style="margin-top: 20px;">
+            <a href="{{ url_for('login') }}" class="btn btn-success">
+                <i class="fas fa-sign-in-alt"></i> Start Testing - Login
+            </a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h3><i class="fas fa-cogs"></i> Professional Testing Features</h3>
+        <ul>
+            <li><i class="fas fa-check"></i> <strong>Form Validation:</strong> Advanced input validation with real-time feedback</li>
+            <li><i class="fas fa-check"></i> <strong>Navigation Testing:</strong> Multi-page application workflow</li>
+            <li><i class="fas fa-check"></i> <strong>Error Handling:</strong> Comprehensive error management system</li>
+            <li><i class="fas fa-check"></i> <strong>API Endpoints:</strong> RESTful API testing capabilities</li>
+        </ul>
+        <div style="margin-top: 20px;">
+            <a href="{{ url_for('features') }}" class="btn btn-primary">
+                <i class="fas fa-star"></i> Explore Features
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h3><i class="fas fa-users"></i> Test User Accounts</h3>
+    <p>Use these professionally configured test accounts to explore different user roles and permissions:</p>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th><i class="fas fa-user"></i> Username</th>
+                <th><i class="fas fa-key"></i> Password</th>
+                <th><i class="fas fa-user-tag"></i> Role</th>
+                <th><i class="fas fa-envelope"></i> Email</th>
+                <th><i class="fas fa-tasks"></i> Access Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>admin</code></td>
+                <td><code>password123</code></td>
+                <td><span style="color: #dc2626; font-weight: bold;">Administrator</span></td>
+                <td>admin@testingdemo.com</td>
+                <td>Full System Access</td>
+            </tr>
+            <tr>
+                <td><code>student</code></td>
+                <td><code>student123</code></td>
+                <td><span style="color: #059669; font-weight: bold;">Student</span></td>
+                <td>student@university.edu</td>
+                <td>Standard User Access</td>
+            </tr>
+            <tr>
+                <td><code>test_user</code></td>
+                <td><code>test123</code></td>
+                <td><span style="color: #0891b2; font-weight: bold;">Test User</span></td>
+                <td>demo@testing.com</td>
+                <td>Demo Account Access</td>
+            </tr>
+            <tr>
+                <td><code>qa_tester</code></td>
+                <td><code>qa123</code></td>
+                <td><span style="color: #7c2d12; font-weight: bold;">QA Tester</span></td>
+                <td>qa@company.com</td>
+                <td>Quality Assurance Access</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="grid grid-3">
+    <div class="card">
+        <h4><i class="fas fa-check-double" style="color: #10b981;"></i> Positive Testing</h4>
+        <p>Test successful workflows with valid data inputs, proper authentication, and expected user journeys.</p>
+        <ul>
+            <li>Valid login scenarios</li>
+            <li>Successful form submissions</li>
+            <li>Proper navigation flows</li>
+            <li>Role-based access verification</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h4><i class="fas fa-exclamation-triangle" style="color: #f59e0b;"></i> Negative Testing</h4>
+        <p>Verify system behavior with invalid inputs, unauthorized access attempts, and edge cases.</p>
+        <ul>
+            <li>Invalid credentials testing</li>
+            <li>Form validation errors</li>
+            <li>Unauthorized access attempts</li>
+            <li>Input boundary testing</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h4><i class="fas fa-shield-alt" style="color: #ef4444;"></i> Security Testing</h4>
+        <p>Comprehensive security validation including session management and data protection.</p>
+        <ul>
+            <li>Session hijacking prevention</li>
+            <li>Input sanitization</li>
+            <li>Access control validation</li>
+            <li>CSRF protection testing</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+    <h3><i class="fas fa-graduation-cap"></i> Perfect for Learning & Professional Development</h3>
+    <div class="grid grid-2" style="margin-top: 20px;">
+        <div>
+            <h4><i class="fas fa-university"></i> Academic Excellence</h4>
+            <ul>
+                <li>Industry-standard testing practices</li>
+                <li>Real-world application scenarios</li>
+                <li>Comprehensive documentation</li>
+                <li>Portfolio-ready project</li>
+            </ul>
+        </div>
+        <div>
+            <h4><i class="fas fa-briefcase"></i> Professional Skills</h4>
+            <ul>
+                <li>Selenium WebDriver expertise</li>
+                <li>Test automation proficiency</li>
+                <li>Quality assurance knowledge</li>
+                <li>Career advancement preparation</li>
+            </ul>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="{{ url_for('about') }}" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">
+            <i class="fas fa-info-circle"></i> Learn More About This Platform
+        </a>
+    </div>
+</div>
+
+{% endblock %}
